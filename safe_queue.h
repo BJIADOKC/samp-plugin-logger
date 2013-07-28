@@ -41,5 +41,15 @@ namespace boost
 
 			return ret;
 		}
+
+		bool empty()
+		{
+			return queue.empty();
+		}
+
+		int size()
+		{
+			return queue.size();
+		}
 	};
 };
