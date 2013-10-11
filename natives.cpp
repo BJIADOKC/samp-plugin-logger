@@ -11,7 +11,8 @@
 extern logprintf_t logprintf;
 extern amxString *gString;
 
-extern boost::safe_queue<amxOutput> threadQueue;
+extern boost::mutex gMutex;
+extern std::queue<amxOutput> threadQueue;
 
 
 
@@ -41,7 +42,9 @@ cell AMX_NATIVE_CALL amxNatives::Log(AMX *amx, cell *params)
 	output.file = gString->Get(amx, params[1]);
 	output.data = gString->Get(amx, params[2]);
 
+	boost::mutex::scoped_lock lock(gMutex);
 	threadQueue.push(output);
+	lock.unlock();
 
 	return 1;
 }

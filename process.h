@@ -16,7 +16,7 @@ public:
 	bool Active;
 
 	amxProcess();
-	virtual ~amxProcess();
+	~amxProcess(); // removed virtual, g++ crashes
 
 	static void Thread();
 };

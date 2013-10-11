@@ -32,7 +32,7 @@ PLUGIN_EXPORT bool PLUGIN_CALL Load(void **ppData)
 	
 	gProcess = new amxProcess();
 
-	logprintf("  Logger v1.0 loaded");
+	logprintf("  Logger v%s loaded", PLUGIN_VERSION);
 
 	return 1;
 }
@@ -41,9 +41,9 @@ PLUGIN_EXPORT bool PLUGIN_CALL Load(void **ppData)
 
 PLUGIN_EXPORT void PLUGIN_CALL Unload()
 {
-	delete gProcess;
+	logprintf("  Logger v%s unloaded", PLUGIN_VERSION);
 
-	logprintf("  Logger v1.0 unloaded");
+	delete gProcess;
 }
 
 

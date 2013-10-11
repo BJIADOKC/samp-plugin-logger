@@ -83,7 +83,6 @@
     <ClInclude Include="logger.h" />
     <ClInclude Include="natives.h" />
     <ClInclude Include="process.h" />
-    <ClInclude Include="safe_queue.h" />
     <ClInclude Include="string.h" />
   </ItemGroup>
   <ItemGroup>

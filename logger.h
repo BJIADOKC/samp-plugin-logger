@@ -10,7 +10,6 @@
 #include <fstream>
 #include <iostream>
 #include <queue>
-#include <stack>
 #include <string>
 #include <time.h>
 
@@ -23,7 +22,6 @@
 
 #include "natives.h"
 #include "process.h"
-#include "safe_queue.h"
 #include "string.h"
 
 
@@ -32,6 +30,8 @@
 
 typedef void (*logprintf_t)(char *format, ...);
 
+
+#define PLUGIN_VERSION "1.1"
 
 #define arguments(n) \
 	(params[0] == (n << 2))
